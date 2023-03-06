@@ -1,12 +1,15 @@
 import './App.css';
 import Header from "./components/Header";
 import Locate from "./components/Locate";
+import {IpProvider} from "./Context";
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Locate/>
+      <IpProvider>
+        <Header/>
+        <Locate/>
+      </IpProvider>
     </div>
   );
 }

@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import "./Header.css";
-import arrow from "../images/icon-arrow.svg"
+import arrow from "../images/icon-arrow.svg";
+import {IpContext} from "../Context";
+
 
 const Header = () => {
+    const [ip, setIp] = useContext(IpContext);
+
+
   return (
     <div className="header">
         <article className="container">
@@ -13,7 +18,11 @@ const Header = () => {
                     <input 
                     type="text" 
                     className="search"
-                    placeholder="search for any ip address" />
+                    placeholder="search for any ip address"
+                    onChange={(event)=>{
+                        setIp(event.target.value)
+                        console.log(event.target.value)
+                    }} />
 
                     <button type="submit" className="arrow">
                         <img src={arrow} alt="" />

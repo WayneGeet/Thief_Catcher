@@ -1,13 +1,17 @@
-import React, {useRef, useEffect, useState} from 'react';
+import React, {useRef, useEffect, useContext} from 'react';
 import Map from "react-map-gl";
+import {IpContext} from "../Context";
 
 const Locate = () => {
+  const [ip] = useContext(IpContext);
+  
+
   useEffect(()=>{
     getData()
   },[])
 
   async function getData(){
-    const apiCall = await fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_7zfwFIp38aznWpHOJxFzu4vhYRLxj&ipAddress=8.8.8.8`);
+    const apiCall = await fetch(`https://geo.ipify.org/api/v2/country?apiKey=${process.env.REACT_APP_GEO_API}&ipAddress=${ip}`);
     const response = await apiCall.json();
     console.log(response)
   }
@@ -28,6 +32,7 @@ const Locate = () => {
       zIndex:1}}
       mapStyle="mapbox://styles/wayne-geet/cld0c6fb2003314qm2coqihkl"
       mapboxAccessToken={process.env.REACT_APP_MAPBOX }
+      onClick={getData}
             />
   )
 }
