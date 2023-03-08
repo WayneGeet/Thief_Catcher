@@ -1,0 +1,10 @@
+@media screen and (min-width:376){
+    .mapboxgl-map{
+        max-width:1200px;
+        width:1200px;
+        position:relative;
+        bottom:5rem;
+    }
+
+    
+}

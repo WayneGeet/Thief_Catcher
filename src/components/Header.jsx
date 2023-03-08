@@ -1,12 +1,23 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import "./Header.css";
 import arrow from "../images/icon-arrow.svg";
 import {IpContext} from "../Context";
 
 
-const Header = () => {
+const Header = ({data}) => {
     const [ip, setIp] = useContext(IpContext);
+    const [info, setInfo] = useState("")
 
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+        const pattern = /^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/;
+        if(pattern.exec(info)){
+            setIp(()=>info)
+        }
+        else{
+            window.alert("Wrong IP format!")
+        }
+    }
 
   return (
     <div className="header">
@@ -20,11 +31,14 @@ const Header = () => {
                     className="search"
                     placeholder="search for any ip address"
                     onChange={(event)=>{
-                        setIp(event.target.value)
-                        console.log(event.target.value)
-                    }} />
-
-                    <button type="submit" className="arrow">
+                        setInfo(event.target.value)
+                    }}
+                     />
+   
+                    <button
+                     type="submit"
+                      className="arrow"
+                      onClick={handleSubmit}>
                         <img src={arrow} alt="" />
                     </button>
                 </form>
@@ -32,17 +46,22 @@ const Header = () => {
 
             <div className="card">
                 <form className="info">
-                    <label htmlFor="ip_address" className="address">ip address</label>
-                    <input type="text" id="ip_address" />
-
-                    <label htmlFor="location" className="address">location</label>
-                    <input type="text" id="location" />
-
-                    <label htmlFor="timezone" className="timezone">timezone</label>
-                    <input type="text" id="timezone" />
-
-                    <label htmlFor="isp" className="isp">isp</label>
-                    <input type="text" id="isp" />
+                    <div className="group">
+                        <label htmlFor="ip_address" className="input address">ip address</label>
+                        <input type="text" id="ip_address" value={data.ip} readOnly />
+                    </div>
+                    <div className="group">
+                        <label htmlFor="location" className="input location">location</label>
+                        <input type="text" id="location" value={data.location.city} readOnly />
+                    </div>
+                    <div className="group">
+                        <label htmlFor="timezone" className="input timezone">timezone</label>
+                        <input type="text" id="timezone" value={data.location.timezone} readOnly />
+                    </div>
+                    <div className="group">
+                        <label htmlFor="isp" className="input isp">isp</label>
+                        <input type="text" id="isp" value={data.isp} readOnly />
+                    </div>
                 </form>
             </div>
         </article>
