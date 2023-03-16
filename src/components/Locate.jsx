@@ -64,7 +64,7 @@ const Locate = () => {
           top:"18.2rem",
           zIndex:1}}
           mapStyle="mapbox://styles/wayne-geet/cld0c6fb2003314qm2coqihkl"
-          mapboxAccessToken="pk.eyJ1Ijoid2F5bmUtZ2VldCIsImEiOiJjbGY1Z3YxemIwa3dlNDBvNHQwdnQ5MndqIn0.vMaKQfodULOneKKcdhyl4g"
+          mapboxAccessToken={process.env.REACT_APP_MAPBOX}
           // onLoad={()=>{
           //   flyer(data.location.lat, data.location.lon)
           // }}
