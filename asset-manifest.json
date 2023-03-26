@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Thief_Catcher/static/css/main.c52010e7.css",
+    "main.js": "/Thief_Catcher/static/js/main.ea36d8d3.js",
+    "static/js/483.04091d9d.chunk.js": "/Thief_Catcher/static/js/483.04091d9d.chunk.js",
+    "static/media/pattern-bg-desktop.png": "/Thief_Catcher/static/media/pattern-bg-desktop.5013c4f570ecf757f855.png",
+    "static/media/rings.gif": "/Thief_Catcher/static/media/rings.e851f2eecb1dbbd1ceab.gif",
+    "static/media/bg_mobile.png": "/Thief_Catcher/static/media/bg_mobile.3666aa38dccbc0ebd679.png",
+    "index.html": "/Thief_Catcher/index.html",
+    "static/media/icon-arrow.svg": "/Thief_Catcher/static/media/icon-arrow.2eaaa5ee3602d5aa14a2dba69e9fb7a0.svg",
+    "main.c52010e7.css.map": "/Thief_Catcher/static/css/main.c52010e7.css.map",
+    "main.ea36d8d3.js.map": "/Thief_Catcher/static/js/main.ea36d8d3.js.map",
+    "483.04091d9d.chunk.js.map": "/Thief_Catcher/static/js/483.04091d9d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c52010e7.css",
+    "static/js/main.ea36d8d3.js"
+  ]
+}
